@@ -6,13 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quickxorhash-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quickxorhash-{{ version }}.tar.gz
   sha256: 4d0857357bfab95d701ed145beae1fc8d8ac9386aa7475932e82e2afd96a8bb0
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,10 +22,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python >=3.7
+    - python
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python
 
 test:
   imports:
