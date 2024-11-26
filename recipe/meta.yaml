@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quickxorhash-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quickxorhash-{{ version }}.tar.gz
   sha256: 4d0857357bfab95d701ed145beae1fc8d8ac9386aa7475932e82e2afd96a8bb0
 
 build:
@@ -24,6 +24,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptool
   run:
     - python
 
